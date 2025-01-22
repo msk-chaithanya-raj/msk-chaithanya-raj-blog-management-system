@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
+const blogRoutes = require("./routes/blogRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 // Load environment variables
 dotenv.config();
@@ -20,6 +22,8 @@ mongoose
 
 // API Routes
 app.use("/api/users", userRoutes);
+app.use("/api/blogs", blogRoutes);
+app.use("/api/comments", commentRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
